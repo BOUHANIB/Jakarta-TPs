@@ -11,11 +11,6 @@ import ma.emsi.tpbanquebouhanib.entities.CompteBancaire;
  * @author Othmane
  */
 
-
-/**
- *
- * @author Wassim
- */
 public class Init {
     @EJB
   private GestionnaireCompte gestionnaireCompte;
