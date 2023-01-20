@@ -12,7 +12,7 @@ import jakarta.persistence.Id;
 
 /**
  *
- * @author Wassim
+ * @author Othmane
  */
 @Entity
 public class CompteBancaire implements Serializable {
@@ -45,14 +45,14 @@ public class CompteBancaire implements Serializable {
     public void setSolde(int solde) {
         this.solde = solde;
     }
-public CompteBancaire() {
+
+    public CompteBancaire() {
     }
 
-    public CompteBancaire(String nom, int solde) {  
-        this.nom = nom;  
-        this.solde = solde;  
-    }  
-
+    public CompteBancaire(String nom, int solde) {
+        this.nom = nom;
+        this.solde = solde;
+    }
 
     @Override
     public int hashCode() {
@@ -74,22 +74,22 @@ public CompteBancaire() {
         return true;
     }
 
+    public void deposer(int montant) {
+        solde += montant;
+    }
 
-
-    public void deposer(int montant) {  
-        solde += montant;  
-    }  
-
-    public void retirer(int montant) {  
-        if (montant < solde) {  
-            solde -= montant;  
+    public void retirer(int montant) {
+        if (montant < solde) {
+            solde -= montant;
         } else {
             solde = 0;
-        }  
+        }
     }
+
     @Override
     public String toString() {
-        return "com.bouhanib.tpbanquebouhanib.entities.CompteBancaire[ id=" + id + " ]";
+        return "ma.emsi.tpbanquebouhanib.entities.CompteBancaire;\n"
+                + "[ id=" + id + " ]";
     }
 
 }
